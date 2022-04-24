@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <title>MSIS Club Event Registration System</title>
+
+    </head>
+
+    <body>
+
+        <h1>Students</h1>
+
+        <ul>
+            <!-- Creates a li element for each student in the list -->
+            {% for student in studentList %}
+                <li>
+                    <!-- A link where the url is like /student?id=123 and the text is the student's id and name -->
+                    <a href="{{ url_for('student', id=student.id) }}">{{student.id}} {{student.first_name}} {{student.last_name}}</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+    </body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <title>MSIS Club Event Registration System</title>
+
+    </head>
+
+    <body>
+
+        <h1>{{student.first_name}} {{student.last_name}}</h1>
+
+        <p>
+            <strong>ID:</strong> {{student.id}}
+        </p>
+
+        <p>
+            <strong>Major:</strong> {{student.major}}
+        </p>
+
+        <h2>Registered events</h2>
+
+        <ul>
+            {% for event in eventList %}
+                <li>
+                    {{event.id}} {{event.name}}
+                </li>
+            {% endfor %}
+        </ul>
+
+    </body>
+
+</html>

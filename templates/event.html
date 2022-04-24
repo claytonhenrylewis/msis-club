@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <title>MSIS Club Event Registration System</title>
+
+    </head>
+
+    <body>
+
+        <h1>{{event.name}}</h1>
+
+        <p>
+            <strong>Fee:</strong> {{event.fee}}
+        </p>
+
+        <p>
+            <!-- Computes available seats, and also shows the total capacity -->
+            <strong>Available seats:</strong> {{event.capacity - event.registered}} / {{event.capacity}}
+        </p>
+
+        <h2>Register</h2>
+
+        <form action="/register" method="post">
+            <p>
+                <!-- We need an input for the event id so our app knows which event to register for, but we make it readonly so the user doesn't change it -->
+                <label for="eventId">Event ID:</label>
+                <input name="eventId" type="number" value={{event.id}} readonly>
+            </p>
+
+            <p>
+                <label for="studentId">Student ID:</label>
+                <input name="studentId" type="number">
+            </p>
+
+            <p>
+                <label for="firstName">First Name:</label>
+                <input name="firstName" type="text">
+            </p>
+
+            <p>
+                <label for="lastName">Last Name:</label>
+                <input name="lastName" type="text">
+            </p>
+
+            <p>
+                <label for="major">Major:</label>
+                <input name="major" type="text">
+            </p>
+
+            <input type="submit" value="Register">
+        </form>
+
+    </body>
+
+</html>
