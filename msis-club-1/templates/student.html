@@ -4,7 +4,7 @@
 
     <head>
 
-        <title>MSIS Club Event Registration System</title>
+        <title>MSIS Club Event Registration System V1</title>
 
     </head>
 
@@ -25,10 +25,13 @@
         <ul>
             {% for event in eventList %}
                 <li>
-                    {{event.id}} {{event.name}}
+                    <!-- A link where the url is like /event?id=1 and the text is the id and name of the event -->
+                    <a href="{{ url_for('event', id=event.id) }}">{{event.id}} {{event.name}}</a>
                 </li>
             {% endfor %}
         </ul>
+
+        <a href="{{ url_for('students') }}">All students</a>
 
     </body>
 

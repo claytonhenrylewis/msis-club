@@ -24,3 +24,10 @@ def GetStudents():
     # Load all students from the database
     studentList = db.execute("SELECT * FROM student")
     return studentList
+
+
+
+def GetStudentsForEvent(eventId):
+    # Load id and name of all students registered for this event
+    eventStudentList = db.execute("SELECT id, first_name, last_name FROM student_event INNER JOIN student ON student_id=id WHERE event_id=?", eventId)
+    return eventStudentList

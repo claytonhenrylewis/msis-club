@@ -47,14 +47,26 @@ def event():
     # Get event by id
     event = eventService.GetEvent(eventId)
 
-    # Render event.html with the event variable
-    return render_template("event.html", event=event)
+    eventStudentList = studentService.GetStudentsForEvent(eventId)
+
+    # Render event.html with the event and eventStudentList variables
+    return render_template("event.html", event=event, studentList=eventStudentList)
+
+
+
+@app.route("/register", methods=["GET"])
+def register():
+    # Find the event id in the received GET request
+    eventId = request.args.get("id")
+
+    # Render register.html with the eventId variable
+    return render_template("register.html", eventId=eventId)
 
 
 
 # Register form submit
 @app.route("/register", methods=["POST"])
-def register():
+def registerSubmit():
     # Load all values from the form
     eventId = request.form.get("eventId")
     studentId = request.form.get("studentId")
@@ -90,7 +102,7 @@ def register():
 def students():
     studentList = studentService.GetStudents()
 
-    # Render students.html with the students variable
+    # Render students.html with the studentList variable
     return render_template("students.html", studentList=studentList)
 
 

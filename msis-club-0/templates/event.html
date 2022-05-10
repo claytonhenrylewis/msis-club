@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <title>MSIS Club Event Registration System V0</title>
+
+    </head>
+
+    <body>
+
+        <h1>{{event.name}}</h1>
+
+        <p>
+            <strong>Fee:</strong> {{event.fee}}
+        </p>
+
+        <p>
+            <!-- Computes available seats, and also shows the total capacity -->
+            <strong>Available seats:</strong> {{event.capacity - event.registered}} / {{event.capacity}}
+        </p>
+
+        <a href="{{ url_for('events') }}">All events</a>
+
+    </body>
+
+</html>
