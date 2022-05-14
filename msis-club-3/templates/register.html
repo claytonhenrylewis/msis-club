@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <h2>Register</h2>
+
+        <form action="/register" method="post">
+            <p>
+                <!-- We need an input for the event id so our app knows which event to register for, but we make it readonly so the user doesn't change it -->
+                <label for="eventId">Event ID:</label>
+                <input name="eventId" type="number" value={{eventId}} readonly>
+            </p>
+
+            <p>
+                <label for="studentId">Student ID:</label>
+                {% if student %}
+                    <!-- Student id input is made to be a number and at least 0 -->
+                    <input name="studentId" type="number" min="0" value="{{student['id']}}">
+                {% else %}
+                    <!-- Student id input is made to be a number and at least 0 -->
+                    <input name="studentId" type="number" min="0" }}>
+                {% endif %}
+
+            </p>
+
+            <p>
+                <label for="firstName">First Name:</label>
+                {% if student %}
+                    <input name="firstName" type="text" value="{{student['first_name']}}">
+                {% else %}
+                    <input name="firstName" type="text">
+                {% endif %}
+            </p>
+
+            <p>
+                <label for="lastName">Last Name:</label>
+                {% if student %}
+                    <input name="lastName" type="text" value="{{student['last_name']}}">
+                {% else %}
+                    <input name="lastName" type="text">
+                {% endif %}
+            </p>
+
+            <p>
+                <label for="major">Major:</label>
+                {% if student %}
+                    <input name="major" type="text" value="{{student['major']}}">
+                {% else %}
+                    <input name="major" type="text">
+                {% endif %}
+            </p>
+
+            <input type="submit" value="Register">
+        </form>
+
+        <p>
+            <a href="{{ url_for('event', id=eventId) }}">Back</a>
+        </p>
+
+{% endblock %}

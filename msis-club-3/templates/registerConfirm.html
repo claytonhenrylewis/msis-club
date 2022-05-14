@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <h2>Confirm Registration</h2>
+
+    <p>Are you sure you want to register this student for this event?</p>
+
+    <h3>Student</h3>
+
+    <p>
+        <strong>Name:</strong> {{student.first_name}} {{student.last_name}}
+    <p>
+
+    <p>
+        <strong>ID:</strong> {{student.id}}
+    </p>
+
+    <p>
+        <strong>Major:</strong> {{student.major}}
+    </p>
+
+    <h3>Event</h3>
+
+    <p>
+        <strong>Name:</strong> {{event.name}}
+    </p>
+
+    <p>
+        <strong>Fee:</strong> {{event.fee}}
+    </p>
+
+    <form action="/registerConfirmed" method="post">
+        <p>
+            <a class="button" href="{{ url_for('registerEdit') }}">Edit</a>
+            <input type="submit" value="Confirm">
+        </p>
+    </form>
+
+{% endblock %}

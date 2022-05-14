@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <h2>{{event.name}}</h2>
+
+    <p>
+        <strong>Fee:</strong> {{event.fee}}
+    </p>
+
+    <p>
+        <!-- Computes available seats, and also shows the total capacity -->
+        <strong>Available seats:</strong> {{event.capacity - event.registered}} / {{event.capacity}}
+    </p>
+
+    <a href="{{ url_for('register', id=event.id) }}">Register</a>
+
+    <h3>Registered students</h3>
+
+    <ul>
+        <!-- Creates a li element for each student in the list -->
+        {% for student in studentList %}
+            <li>
+                <!-- A link where the url is like /student?id=123 and the text is the student's id and name -->
+                <a href="{{ url_for('student', id=student.id) }}">{{student.id}} {{student.first_name}} {{student.last_name}}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('events') }}">All events</a>
+
+{% endblock %}

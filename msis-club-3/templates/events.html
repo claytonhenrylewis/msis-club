@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <h2>Events</h2>
+
+    <ul>
+        <!-- Creates a li element for each event in the list -->
+        {% for event in eventList %}
+            <li>
+                <!-- A link where the url is like /event?id=1 and the text is the name of the event -->
+                <a href="{{ url_for('event', id=event.id) }}">{{event.name}}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('index') }}">Home</a>
+
+{% endblock %}

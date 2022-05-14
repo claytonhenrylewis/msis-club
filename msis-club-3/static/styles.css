@@ -1,0 +1,43 @@
+h1 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    font-family: 'Montserrat', sans-serif;
+}
+
+button, input[type=submit], .button
+{
+    background-color: #008CBA; /* Blue */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button:hover, input[type=submit]:hover, .button:hover {
+    background-color: #006C9A; /* Darker blue */
+}
+
+.body {
+    margin: 50px 100px;
+}
