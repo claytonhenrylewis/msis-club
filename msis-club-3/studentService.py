@@ -21,6 +21,12 @@ def CreateStudent(student):
 
 
 
+def UpdateStudent(student):
+    # Update student in database
+    db.execute("UPDATE student SET first_name=?, last_name=?, major=? WHERE id=?", student['first_name'], student['last_name'], student['major'], student['id'])
+
+
+
 def GetStudents():
     # Load all students from the database
     studentList = db.execute("SELECT * FROM student")

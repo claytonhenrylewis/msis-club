@@ -128,7 +128,10 @@ def registerConfirmed():
         return render_template("error.html", message="This student has already registered for this event.")
 
     # Is there already a student record with this id?
-    if not studentService.GetStudent(student['id']):
+    if studentService.GetStudent(student['id']):
+        # If so, update student record
+        studentService.UpdateStudent(student)
+    else:
         # If not, insert student record
         studentService.CreateStudent(student)
 

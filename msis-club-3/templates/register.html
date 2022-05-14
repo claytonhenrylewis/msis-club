@@ -14,10 +14,12 @@
                 <label for="studentId">Student ID:</label>
                 {% if student %}
                     <!-- Student id input is made to be a number and at least 0 -->
-                    <input name="studentId" type="number" min="0" value="{{student['id']}}">
+                    <!-- Required! -->
+                    <input name="studentId" type="number" min="0" required value="{{student['id']}}">
                 {% else %}
                     <!-- Student id input is made to be a number and at least 0 -->
-                    <input name="studentId" type="number" min="0" }}>
+                    <!-- Required! -->
+                    <input name="studentId" type="number" required min="0" }}>
                 {% endif %}
 
             </p>
@@ -25,18 +27,22 @@
             <p>
                 <label for="firstName">First Name:</label>
                 {% if student %}
-                    <input name="firstName" type="text" value="{{student['first_name']}}">
+                    <!-- Required! -->
+                    <input name="firstName" type="text" required value="{{student['first_name']}}">
                 {% else %}
-                    <input name="firstName" type="text">
+                    <!-- Required! -->
+                    <input name="firstName" type="text" required>
                 {% endif %}
             </p>
 
             <p>
                 <label for="lastName">Last Name:</label>
                 {% if student %}
-                    <input name="lastName" type="text" value="{{student['last_name']}}">
+                    <!-- Required! -->
+                    <input name="lastName" type="text" required value="{{student['last_name']}}">
                 {% else %}
-                    <input name="lastName" type="text">
+                    <!-- Required! -->
+                    <input name="lastName" type="text" required>
                 {% endif %}
             </p>
 
