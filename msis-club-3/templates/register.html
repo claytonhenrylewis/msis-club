@@ -5,11 +5,10 @@
     <h2>Register</h2>
 
         <form action="/register" method="post">
-            <p>
-                <!-- We need an input for the event id so our app knows which event to register for, but we make it readonly so the user doesn't change it -->
-                <label for="eventId">Event ID:</label>
-                <input name="eventId" type="number" value={{eventId}} readonly>
-            </p>
+
+            <!-- We need an input for the event id so our app knows which event to register for, but we make it readonly so the user doesn't change it -->
+            <!-- We can also use some css code to make this hidden from the user -->
+            <input name="eventId" type="number" value={{eventId}} readonly class="hidden">
 
             <p>
                 <label for="studentId">Student ID:</label>

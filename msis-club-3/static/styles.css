@@ -38,6 +38,10 @@ button, input[type=submit], .button
     background-color: #006C9A; /* Darker blue */
 }
 
+.hidden {
+    display: none;
+}
+
 .body {
     margin: 50px 100px;
 }

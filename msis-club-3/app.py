@@ -58,6 +58,7 @@ def event():
 
 
 
+# Register form
 @app.route("/register", methods=["GET"])
 def register():
     # Find the event id in the received GET request
@@ -97,6 +98,7 @@ def registerSubmit():
 
 
 
+# Register form edit (go back to register form)
 @app.route("/registerEdit", methods=["GET"])
 def registerEdit():
     # Find the student and event id in the session
