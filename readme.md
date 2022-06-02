@@ -9,3 +9,6 @@ The base version, a full app using multiple tables and a registration form.
 
 ## V2
 This version adds a confirmation page which works by saving session data.
+
+## V3
+Adds some "nice to have" features: some basic styles and extra validation and logic on the registration form

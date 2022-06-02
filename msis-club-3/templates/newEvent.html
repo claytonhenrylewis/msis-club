@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <h2>New Event</h2>
+
+    <form action="/newEvent" method="post">
+
+        <p>
+            <label for="name">Name:</label>
+            <!-- Required! -->
+            <input name="name" type="text" required >
+        </p>
+
+        <p>
+            <label for="capacity">Capacity:</label>
+            <!-- Capacity input is made to be a number and at least 1 -->
+            <!-- Required! -->
+            <input name="capacity" type="number" required min="1" }}>
+        </p>
+
+        <p>
+            <label for="fee">Fee:</label>
+            <!-- Fee input is made to be a number and at least 0, and accepts up to two decimal places -->
+            <!-- Required! -->
+            <input name="fee" type="number" required min="0" step="0.01" }}>
+        </p>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <p>
+        <a href="{{ url_for('events') }}">All events</a>
+    </p>
+
+{% endblock %}

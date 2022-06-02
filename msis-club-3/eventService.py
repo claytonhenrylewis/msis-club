@@ -23,6 +23,13 @@ def GetEvent(eventId):
 
 
 
+def CreateEvent(event):
+    # Insert event into database
+    # event should be an object instead of three separate values
+    db.execute("INSERT INTO event(name,capacity,fee) VALUES (?,?,?)", event['name'], event['capacity'], event['fee'])
+
+
+
 def IsEventFull(eventId):
     # Load event from database by id
     eventList = db.execute("SELECT * FROM event WHERE id=?", eventId)

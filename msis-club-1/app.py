@@ -54,6 +54,7 @@ def event():
 
 
 
+# Register form
 @app.route("/register", methods=["GET"])
 def register():
     # Find the event id in the received GET request

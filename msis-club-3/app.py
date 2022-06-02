@@ -58,6 +58,37 @@ def event():
 
 
 
+# Add event form
+@app.route("/newEvent", methods=["GET"])
+def newEvent():
+    # Render newEvent.html
+    return render_template("newEvent.html")
+
+
+
+# Add event form submit
+@app.route("/newEvent", methods=["POST"])
+def newEventSubmit():
+    # Load all values from the form
+    name = request.form.get("name")
+    capacity = request.form.get("capacity")
+    fee = request.form.get("fee")
+
+    # Create an event object
+    event = {
+        'name': name,
+        'capacity': capacity,
+        'fee': fee
+    }
+
+    # Insert event record
+    eventService.CreateEvent(event);
+
+    # Render success.html
+    return render_template("success.html", message="Event created successfully!")
+
+
+
 # Register form
 @app.route("/register", methods=["GET"])
 def register():
@@ -139,7 +170,7 @@ def registerConfirmed():
     eventService.Register(student['id'], eventId)
 
     # Render success.html
-    return render_template("success.html")
+    return render_template("success.html", message="Student registered successfully!")
 
 
 # Students list page
